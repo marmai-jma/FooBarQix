@@ -23,6 +23,14 @@ public class FooBarQixTest {
     }
 
     @ParameterizedTest
+    @ValueSource(ints = {1,2,4})
+    void div_should_return_self_by_default(int input) {
+        String result = fooBar.divisible(input);
+        Assertions.assertEquals(""+input, result);
+    }
+
+
+    @ParameterizedTest
     @ValueSource(ints = {3,6,9})
     void modulo_3_not_5_should_return_foo(int input) {
         String result = fooBar.fooBarQix(input);
