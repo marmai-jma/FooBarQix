@@ -61,7 +61,7 @@ public class EmployeeRepositoryIntegrationTest {
         // when
         Employee found = employeeRepository.findByNameAndSurname(alex.getName(), alex.getSurname());
         //Employee found = employeeRepository.findByNameAndSurname("alex", "jules");
-        Employee expected = new Employee(alex.getName(), "1_" + alex.getSurname());
+        Employee expected = new Employee(alex.getName(), alex.getSurname());
         // then
         org.junit.jupiter.api.Assertions.assertAll(
                 () -> Assertions.assertThat(found)
