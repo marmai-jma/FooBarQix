@@ -46,7 +46,7 @@ public class FooBarQixTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints ={15,30,45})
+    @ValueSource(ints ={15,30,45,3*5})
     void modulo_3_and_5_should_return_foobar(int input) {
         String result = fooBar.divisible(input);
         Assertions.assertEquals("FooBar",result);
