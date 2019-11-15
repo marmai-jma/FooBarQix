@@ -60,5 +60,20 @@ public class StringCalculatorTest {
         int sum = StringCalculator.add(input);
         Assertions.assertEquals(123+1+2+0,sum);
     }
+    @Test
+    void should_return_exception_if_string_has_negative_number(){
+        String input = "-1";
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> StringCalculator.add(input));
+    }
 
+    @Test
+    void should_return_exception_with_list_if_string_has_multiple_negative_number(){
+        String input = "-1,-2";
+        org.assertj.core.api.Assertions.assertThatThrownBy(
+                () -> StringCalculator.add(input))
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("-1")
+        .hasMessageContaining("-2");
+    }
 }
